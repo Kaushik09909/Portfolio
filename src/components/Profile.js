@@ -35,13 +35,13 @@ class Profile extends React.Component {
       <Container>
         <Nav tabs>
           <NavItem>
-            <NavLink style={{ marginBottom: '-2px' }} className={classnames({ active: this.state.activeTab === '1' })}
+            <NavLink className={classnames({ active: this.state.activeTab === '1' })}
                      onClick={() => { this.toggle('1'); }}>
               Experience
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink style={{ marginBottom: '-2px' }} className={classnames({ active: this.state.activeTab === '2' })}
+            <NavLink className={classnames({ active: this.state.activeTab === '2' })}
                      onClick={() => { this.toggle('2'); }}>
               Education
             </NavLink>
