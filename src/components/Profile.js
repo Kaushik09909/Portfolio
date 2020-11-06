@@ -5,6 +5,8 @@ import Experience from "./Experience";
 import Education from './Education'
 import MyProfile from '../MyProfile.json'
 import Axios from 'axios';
+import { Button } from '@material-ui/core';
+import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -76,7 +78,12 @@ class Profile extends React.Component {
           </TabPane>
         </TabContent>
         <Row>
-          <input type="button" style={{ margin: 'auto' }} onClick={() => this.printPDF()} value="Print PDF" />
+          <Button variant="contained" color="primary" style={{ margin: 'auto', fontFamily: 'monospace' }} onClick={() => this.printPDF()}>
+            <span>
+              <GetAppRoundedIcon fontSize="medium"/>
+              Download Resume
+            </span>
+          </Button>
         </Row>
       </Container>
     </div>;
