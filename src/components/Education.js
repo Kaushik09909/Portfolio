@@ -34,7 +34,7 @@ class Education extends React.Component {
                       "value": study.durationInYears + " year(s)"
                     }
                   ].map(function (object, i) {
-                    return <div>
+                    return <div key={i}>
                       <Row>
                         <Col className="formLabel">{object.key}:</Col>
                       </Row>

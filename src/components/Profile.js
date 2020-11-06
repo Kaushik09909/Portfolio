@@ -80,7 +80,7 @@ class Profile extends React.Component {
         <Row>
           <Button variant="contained" color="primary" style={{ margin: 'auto', fontFamily: 'monospace' }} onClick={() => this.printPDF()}>
             <span>
-              <GetAppRoundedIcon fontSize="medium"/>
+              <GetAppRoundedIcon fontSize="default"/>
               Download Resume
             </span>
           </Button>
