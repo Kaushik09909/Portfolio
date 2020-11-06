@@ -1,9 +1,10 @@
 import React from 'react';
-import {Jumbotron, Container, TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
+import {Jumbotron, Container, TabContent, TabPane, Nav, NavItem, NavLink, Row } from "reactstrap";
 import classnames from 'classnames';
 import Experience from "./Experience";
 import Education from './Education'
 import MyProfile from '../MyProfile.json'
+import Axios from 'axios';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -21,6 +22,25 @@ class Profile extends React.Component {
         activeTab: tab
       });
     }
+  }
+
+  printPDF() {
+    console.log("hello");
+    Axios.get('http://localhost:8080/getpdf1'
+    , {
+            responseType: 'blob'
+    }
+    )
+    .then(response => {
+      const li = response.data;
+      console.log(li);
+      // const f = new Uint8Array(response.data);
+      // console.log(f)
+      const l = new Blob([response.data], { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(l);
+      window.open(fileURL);
+    })
+    .catch(() => console.log("Can’t access url. Blocked by browser?"))
   }
 
   render() {
@@ -55,6 +75,9 @@ class Profile extends React.Component {
             <Education/>
           </TabPane>
         </TabContent>
+        <Row>
+          <input type="button" style={{ margin: 'auto' }} onClick={() => this.printPDF()} value="Print PDF" />
+        </Row>
       </Container>
     </div>;
   }

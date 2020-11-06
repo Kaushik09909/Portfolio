@@ -7,7 +7,7 @@ import { Media } from "reactstrap";
 function getDuration(duration) {
   const years = parseInt(duration / 12);
   const months = (duration > 12)? duration % 12 : duration
-  return (years > 0? years + " year" + (years > 1? "s": "") + " and " : "") + (months > 0? months + " month" + (months > 1? "s": "") : "");
+  return (years > 0? years + " year" + (years > 1? "s": "") : "") + (months > 0? " and " + months + " month" + (months > 1? "s": "") : "");
 };
 
 class Experience extends React.Component {
@@ -22,7 +22,7 @@ class Experience extends React.Component {
               const startDate = moment(role.startDate);
               const timeEnd = moment(role.currentJob ? new Date() : new Date(role.endDate));
               const duration = moment.duration(timeEnd.diff(startDate));
-              return Number(cnt) + Number(duration.asMonths().toPrecision(1));
+              return Number(cnt) + Number(duration.asMonths().toFixed());
             }, 0);
 
             return (
@@ -40,7 +40,8 @@ class Experience extends React.Component {
                     {experience.roles.map(function (role, i) {
                       const startDate = moment(role.startDate);
                       const timeEnd = moment(role.currentJob ? new Date() : new Date(role.endDate));
-                      const duration = Number(moment.duration(timeEnd.diff(startDate)).asMonths().toPrecision(1));
+                      let yearsDiff = timeEnd.year - startDate.year;
+                      const duration = Number(moment.duration(timeEnd.diff(startDate)).asMonths().toFixed());
 
                       return <div key={i}>
                         <h5>{role.title}</h5>

@@ -6,25 +6,6 @@ import MyProfile from '../MyProfile';
 
 class Education extends React.Component {
 
-  printPDF() {
-    console.log("hello");
-    axios.get('http://localhost:8080/getpdf1'
-    , {
-            responseType: 'blob'
-    }
-    )
-    .then(response => {
-      const li = response.data;
-      console.log(li);
-      // const f = new Uint8Array(response.data);
-      // console.log(f)
-      const l = new Blob([response.data], { type: 'application/pdf' });
-      const fileURL = URL.createObjectURL(l);
-      window.open(fileURL);
-    })
-    .catch(() => console.log("Can’t access url. Blocked by browser?"))
-  }
-
   render() {
     return <Container>
       <Row>
@@ -67,9 +48,6 @@ class Education extends React.Component {
             </Media>
           })}
         </Col>
-      </Row>
-      <Row>
-        <input type="button" style={{ margin: 'auto' }} onClick={() => this.printPDF()} value="Print PDF" />
       </Row>
       {/* <br/>
       <br/>
