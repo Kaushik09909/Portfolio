@@ -40,7 +40,6 @@ class Experience extends React.Component {
                     {experience.roles.map(function (role, i) {
                       const startDate = moment(role.startDate);
                       const timeEnd = moment(role.currentJob ? new Date() : new Date(role.endDate));
-                      let yearsDiff = timeEnd.year - startDate.year;
                       const duration = Number(moment.duration(timeEnd.diff(startDate)).asMonths().toFixed());
 
                       return <div key={i}>

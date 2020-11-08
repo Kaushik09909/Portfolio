@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Experience from "./Experience";
 import Education from './Education'
 import MyProfile from '../MyProfile.json'
-import Axios from 'axios';
+import axios from 'axios';
 import { Button } from '@material-ui/core';
 import GetAppRoundedIcon from '@material-ui/icons/GetAppRounded';
 
@@ -14,6 +14,7 @@ class Profile extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
+      downloadFile: null,
       activeTab: '1'
     };
   }
@@ -28,11 +29,9 @@ class Profile extends React.Component {
 
   printPDF() {
     console.log("hello");
-    Axios.get('http://localhost:8080/getpdf1'
-    , {
+    axios.get('http://server-inf.herokuapp.com/download',{
             responseType: 'blob'
-    }
-    )
+    })
     .then(response => {
       const li = response.data;
       console.log(li);
@@ -42,7 +41,11 @@ class Profile extends React.Component {
       const fileURL = URL.createObjectURL(l);
       window.open(fileURL);
     })
-    .catch(() => console.log("Can’t access url. Blocked by browser?"))
+    .catch(err => {
+      if(err) {
+        alert("Requested resource not found. Please try again later!!!!!");
+      }
+    })
   }
 
   render() {

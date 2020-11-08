@@ -1,6 +1,5 @@
 import React from 'react';
 import {Container, Row, Col, Media} from 'reactstrap';
-import axios from 'axios';
 // import moment from 'moment';
 import MyProfile from '../MyProfile';
 

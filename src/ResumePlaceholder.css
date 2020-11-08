@@ -1,0 +1,13 @@
+.backgroundImage {
+    background-image: url(solid.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40em;
+}
