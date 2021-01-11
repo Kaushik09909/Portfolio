@@ -29,7 +29,7 @@ class Profile extends React.Component {
 
   printPDF() {
     console.log("hello");
-    axios.get('http://server-inf.herokuapp.com/download',{
+    axios.get('https://server-inf.herokuapp.com/download',{
             responseType: 'blob'
     })
     .then(response => {

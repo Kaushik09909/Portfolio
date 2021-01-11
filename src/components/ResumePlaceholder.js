@@ -42,7 +42,7 @@ class ResumePlaceholder extends React.Component {
             // axios.post("http://localhost:3001/upload", formData, {
             //     //Post request to upload resume to server
             // })
-            axios.post("http://server-inf.herokuapp.com/upload", formData, {
+            axios.post("https://server-inf.herokuapp.com/upload", formData, {
                 //Post request to upload resume to server
             })
             .then(res => {
