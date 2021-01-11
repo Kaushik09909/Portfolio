@@ -7,7 +7,7 @@ import '../ResumePlaceholder.css';
 
 class ResumePlaceholder extends React.Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
             selectedFile: null,
             upload: false,
@@ -39,6 +39,9 @@ class ResumePlaceholder extends React.Component {
             // let blob = new Blob([selectedFile], { type: "application/pdf" });
             // console.log(blob);
             // FileSaver.saveAs(blob, "Resume.pdf");
+            // axios.post("http://localhost:3001/upload", formData, {
+            //     //Post request to upload resume to server
+            // })
             axios.post("http://server-inf.herokuapp.com/upload", formData, {
                 //Post request to upload resume to server
             })
@@ -58,9 +61,9 @@ class ResumePlaceholder extends React.Component {
         let { state: { selectedFile, upload } } = this;
         return (
             <div className="backgroundImage" style={{ height: window.innerHeight, width:window.innerWidth }}>
-                <label className="position" htmlFor="upload-resume">
+                <label className="position">
                     <h3 style={{ color: 'chocolate' }}>Upload your resume in pdf format.</h3>
-                    <input type="file" id="upload-resume" name="upload-resume" style={{ display: 'none' }} onChange={this.onFileChange}/>
+                    <input type="file" id="upload-resume" name="upload-resume" onChange={this.onFileChange} style={{ display: 'none' }}/>
                     <IconButton variant="contained" color="secondary" component="span">
                         <BackupRoundedIcon fontSize="large" />
                     </IconButton>
