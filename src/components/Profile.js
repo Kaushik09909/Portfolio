@@ -28,7 +28,6 @@ class Profile extends React.Component {
   }
 
   printPDF() {
-    console.log("hello");
     axios.get('https://server-inf.herokuapp.com/download',{
             responseType: 'blob'
     })
@@ -37,9 +36,12 @@ class Profile extends React.Component {
       console.log(li);
       // const f = new Uint8Array(response.data);
       // console.log(f)
-      const l = new Blob([response.data], { type: 'application/pdf' });
-      const fileURL = URL.createObjectURL(l);
-      window.open(fileURL);
+      const blob = new Blob([li], { type: 'application/pdf' });
+      let link = document.createElement('a');
+      link.download = 'Kaushik_Kumar_Resume.pdf';
+      link.href = URL.createObjectURL(blob);
+      link.click();
+      URL.revokeObjectURL(link.href);
     })
     .catch(err => {
       if(err) {
