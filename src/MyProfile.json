@@ -13,6 +13,21 @@
     ],
     "experiences": [
       {
+        "companyName": "Sinch",
+        "logo": "https://avatars.githubusercontent.com/u/7583088?s=280&v=4",
+        "url": "https://www.sinch.com",
+        "roles": [
+          {
+            "title": "Senior Software Engineer",
+            "description": "Implementing designs into working code which comprises an end-to-end approach. Mainly focused on Front-end  and Back-end technologies and exploring the latest trends and concepts in UI technology. Exploring use-cases pertaining to the technologies coming up or already in the market. Developing technical strategies and understanding architectural nuances in designing various solutions. Focus on performance, usability and up-to-date practices.",
+            "startDate": "2021-10-01",
+            "endDate": "2021-09-30",            
+            "currentJob": true,
+            "location": "Noida, UP, India"
+          }
+        ]
+      },
+      {
         "companyName": "Cognizant Information Technology",
         "logo": "https://mma.prnewswire.com/media/1492303/Cognizant_Social_Logo.jpg?p=distribution",
         "url": "https://www.cognizant.com/",
@@ -21,7 +36,8 @@
             "title": "Web Engineer",
             "description": "Implementing designs into working code which comprises an end-to-end approach. Mainly focused on Front-end technologies and exploring the latest trends and concepts in UI technology. Exploring use-cases pertaining to the technologies coming up or already in the market. Developing technical strategies and understanding architectural nuances in designing various solutions. Design thinking process implementation pertaining to requirements analysis for client based solutions. Focus on performance, usability and up-to-date practices.",
             "startDate": "2021-03-01",
-            "currentJob": true,
+            "endDate": "2021-09-30",
+            "currentJob": false,
             "location": "Bangalore, Karnataka, India"
           }
         ]

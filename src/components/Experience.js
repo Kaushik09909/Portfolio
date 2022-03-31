@@ -29,7 +29,7 @@ class Experience extends React.Component {
               <div key={i}>
                 <Media>
                   <Media left top href={experience.url}>
-                    <Media object src={experience.logo} alt={experience.companyName}/>
+                    <Media style={{ minWidth: "170px", objectContain: "fit" }} object src={experience.logo} alt={experience.companyName}/>
                   </Media>
                   <Media body>
                     <Media heading>
